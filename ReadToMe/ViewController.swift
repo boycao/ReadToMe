@@ -17,9 +17,16 @@ class ViewController: UIViewController {
         welcomeLabel.frame = CGRect(x: 50, y: 50, width: 500, height: 30)
         welcomeLabel.text = "Welcome to ReadToMe"
         
+        startButton.frame = CGRect(x: 100, y: 100, width: 200, height: 30)
+        startButton.setTitle("Let's start reading", for: .normal)
+        startButton.setTitleColor(UIColor.blue, for: .normal)
+        startButton.addTarget(self, action: #selector(startReading(_:)), for: .touchUpInside)
         self.view.addSubview(welcomeLabel)
+        self.view.addSubview(startButton)
     }
     
-
+    @IBAction func startReading(_ sender:UIButton){
+        print("button tapped")
+    }
 }
 
