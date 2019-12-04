@@ -8,21 +8,25 @@
 
 import UIKit
 
-class ViewController: UIViewController {
-    let startButton = UIButton()
-    let welcomeLabel = UILabel()
+class ViewController: UIViewController, UITextFieldDelegate {
+    
+    @IBOutlet weak var welcomeLabel: UILabel!
+    @IBOutlet weak var nameTextField: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        welcomeLabel.frame = CGRect(x: 50, y: 50, width: 500, height: 30)
-        welcomeLabel.text = "Welcome to ReadToMe"
+        welcomeLabel.text = "Welcome to ReadToMe!"
+        nameTextField.delegate = self;
         
-        startButton.frame = CGRect(x: 100, y: 100, width: 200, height: 30)
-        startButton.setTitle("Let's start reading", for: .normal)
-        startButton.setTitleColor(UIColor.blue, for: .normal)
-        startButton.addTarget(self, action: #selector(startReading(_:)), for: .touchUpInside)
-        self.view.addSubview(welcomeLabel)
-        self.view.addSubview(startButton)
+        func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+            // Hide the keyboard.
+            textField.resignFirstResponder()
+            return true
+        }
+        
+        func textFieldDidEndEditing(_ textField: UITextField) {
+            welcomeLabel.text = textField.text
+        }
     }
     
     @IBAction func startReading(_ sender:UIButton){

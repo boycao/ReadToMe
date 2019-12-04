@@ -1,0 +1,16 @@
+PODS:
+  - Lumina (1.5.0)
+
+DEPENDENCIES:
+  - Lumina
+
+SPEC REPOS:
+  trunk:
+    - Lumina
+
+SPEC CHECKSUMS:
+  Lumina: 5d4a84d1d90fd63c22d38dfbab33ea11c25c1a37
+
+PODFILE CHECKSUM: 1c2a2769915c8b70b50a9f560f28a8a2a63941df
+
+COCOAPODS: 1.8.4
